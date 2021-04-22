@@ -4,7 +4,7 @@ import Message from "./components/Message";
 
 function App() {
   const [data, setData] = useState({ name: "", email: "", phone: "", url: "" });
-  const [txt, setTxt] = useState("Form is Incomplete");
+  const [txt, setTxt] = useState("");
   const verifyData = (e) => {
     e.preventDefault();
     if (!inputCheck("name", data.name)) {

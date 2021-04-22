@@ -1,6 +1,6 @@
 import React from "react";
 
-const Message = (txt) => {
+const Message = ({ txt }) => {
   return (
     <div>
       <h3 className="text-center message">{txt}</h3>
