@@ -46,6 +46,7 @@ function App() {
           result = false;
         }
         break;
+      default:
     }
 
     return result;
