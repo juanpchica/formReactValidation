@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 const Message = (props) => {
-  const { show, msg, type } = props.action;
+  const { msg, type } = props.action;
   const removeMessage = props.removeMessage;
 
   useEffect(() => {
@@ -10,7 +10,7 @@ const Message = (props) => {
     }, 3000);
 
     return () => clearTimeout(timeout);
-  }, []);
+  });
 
   return (
     <div className={"callout " + type} role="alert">

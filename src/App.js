@@ -4,7 +4,7 @@ import Message from "./components/Message";
 
 function App() {
   const [data, setData] = useState({ name: "", email: "", phone: "", url: "" });
-  const [message, setMessage] = useState({ show: false, msg: "fw", type: "" });
+  const [message, setMessage] = useState({ show: false, msg: "", type: "" });
 
   const showMessage = (show = false, msg = "", type = "") => {
     setMessage({ show, msg, type });
