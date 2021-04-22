@@ -1,12 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-const Form = () => {
-  const [data, setData] = useState({ name: "", email: "", phone: "", url: "" });
-
-  const verifyData = (e) => {
-    e.preventDefault();
-    console.log(data);
-  };
+const Form = ({ data, setData, verifyData }) => {
   return (
     <div className="row">
       <h1 className="text-center">Form Validation</h1>

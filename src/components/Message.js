@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
-const Message = () => {
+const Message = (txt) => {
   return (
     <div>
-      <h3 className="text-center message"></h3>
+      <h3 className="text-center message">{txt}</h3>
     </div>
-  )
-}
+  );
+};
 
-export default Message
+export default Message;
