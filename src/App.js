@@ -13,9 +13,18 @@ function App() {
   const inputCheck = (name, value) => {
     let result = false;
     const letters = /^[A-Za-z]+$/;
+    const numbers = /^[0-9]+$/;
+
     switch (name) {
       case "name":
         if ((value >= 3 && value <= 30) || !value.match(letters)) {
+          result = true;
+        } else {
+          result = false;
+        }
+        break;
+      case "phone":
+        if (!value.match(numbers)) {
           result = true;
         } else {
           result = false;
@@ -28,7 +37,7 @@ function App() {
 
   const verifyData = (e) => {
     e.preventDefault();
-    if (!inputCheck("name", data.name)) {
+    if (!inputCheck("name", data.name) && !inputCheck("phone", data.phone)) {
       showMessage(true, "Form is Complete!", "success");
     } else {
       showMessage(true, "Form is Incomplete!", "warning");
