@@ -4,14 +4,10 @@ import Message from "./components/Message";
 
 function App() {
   const [data, setData] = useState({ name: "", email: "", phone: "", url: "" });
-  const [txt, setTxt] = useState("");
-  const verifyData = (e) => {
-    e.preventDefault();
-    if (!inputCheck("name", data.name)) {
-      setTxt("Form is Complete");
-    } else {
-      setTxt("Form is Incomplete");
-    }
+  const [message, setMessage] = useState({ show: false, msg: "fw", type: "" });
+
+  const showMessage = (show = false, msg = "", type = "") => {
+    setMessage({ show, msg, type });
   };
 
   const inputCheck = (name, value) => {
@@ -30,10 +26,19 @@ function App() {
     return result;
   };
 
+  const verifyData = (e) => {
+    e.preventDefault();
+    if (!inputCheck("name", data.name)) {
+      showMessage(true, "Form is Complete!", "success");
+    } else {
+      showMessage(true, "Form is Incomplete!", "warning");
+    }
+  };
+
   return (
-    <div>
+    <div className="grid-container fluid">
       <Form data={data} setData={setData} verifyData={verifyData}></Form>
-      <Message txt={txt}></Message>
+      {message.show && <Message action={message} removeMessage={showMessage} />}
     </div>
   );
 }

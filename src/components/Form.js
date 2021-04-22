@@ -60,7 +60,6 @@ const Form = ({ data, setData, verifyData }) => {
 
         <div className="small-6 small-centered text-center columns">
           <button
-            href="#"
             className="button success expand round text-center"
             type="submit"
           >
