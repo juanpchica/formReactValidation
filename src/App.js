@@ -14,6 +14,7 @@ function App() {
     let result = false;
     const letters = /^[A-Za-z]+$/;
     const numbers = /^[0-9]+$/;
+    const mailformat = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
     switch (name) {
       case "name":
@@ -30,6 +31,13 @@ function App() {
           result = false;
         }
         break;
+      case "email":
+        if (!value.match(mailformat)) {
+          result = true;
+        } else {
+          result = false;
+        }
+        break;
     }
 
     return result;
@@ -37,7 +45,11 @@ function App() {
 
   const verifyData = (e) => {
     e.preventDefault();
-    if (!inputCheck("name", data.name) && !inputCheck("phone", data.phone)) {
+    if (
+      !inputCheck("name", data.name) &&
+      !inputCheck("phone", data.phone) &&
+      !inputCheck("email", data.email)
+    ) {
       showMessage(true, "Form is Complete!", "success");
     } else {
       showMessage(true, "Form is Incomplete!", "warning");
