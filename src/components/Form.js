@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 class Form extends Component {
   render() {
@@ -6,7 +6,10 @@ class Form extends Component {
       <div className="row">
         <h1 className="text-center">Form Validation</h1>
         <form>
-          <h3>Name:</h3>
+          <label>
+            Name:
+            <input type="text" placeholder=".medium-6.cell" />
+          </label>
           <h3>Email:</h3>
           <h3>Phone:</h3>
           <h3>Blog URL:</h3>
@@ -17,8 +20,8 @@ class Form extends Component {
           </div>
         </form>
       </div>
-    )
+    );
   }
 }
 
-export default Form
+export default Form;
