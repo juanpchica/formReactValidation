@@ -46,7 +46,7 @@ const Form = ({ data, setData, verifyData }) => {
         </div>
         <div className="medium-12 cell">
           <label>
-            Blog Url:
+            Blog Urls (https://www.google.com):
             <input
               type="text"
               placeholder="Blog Url:"
